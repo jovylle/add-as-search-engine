@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Add ChatGPT as search engine",
   "version": "1.0.0",
-  "description": "Adds ChatGPT as a search engine with 'chat' or 'gpt' keyword",
+  "description": "Adds ChatGPT as a search engine with 'chat' keyword",
   "permissions": [
     "search"
   ],

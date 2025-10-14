@@ -2,6 +2,8 @@
 
 This Chrome extension adds Microsoft Copilot as a search engine with the keyword "copilot".
 
+See also: [SINGLE_PURPOSE.md](./SINGLE_PURPOSE.md) · [PRIVACY.md](./PRIVACY.md)
+
 ## How to Use
 
 1. After installing, type `copilot` in your address bar

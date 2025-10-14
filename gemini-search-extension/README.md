@@ -2,6 +2,8 @@
 
 This Chrome extension adds Google Gemini as a search engine with the keyword "gemini".
 
+See also: [SINGLE_PURPOSE.md](./SINGLE_PURPOSE.md) · [PRIVACY.md](./PRIVACY.md)
+
 ## How to Use
 
 1. After installing, type `gemini` in your address bar
@@ -18,6 +20,6 @@ This Chrome extension adds Google Gemini as a search engine with the keyword "ge
 
 ## Search URL
 
-This extension uses: `https://gemini.google.com/app?q={searchTerms}`
+This extension uses: `https://gemini.google.com/app?hl=en&q={searchTerms}`
 
 Note: You may need to be logged into your Google account for the search to work properly.

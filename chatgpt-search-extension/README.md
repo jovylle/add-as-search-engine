@@ -2,16 +2,14 @@
 
 This Chrome extension adds ChatGPT as a search engine with the keyword "chat".
 
+See also: [SINGLE_PURPOSE.md](./SINGLE_PURPOSE.md) · [PRIVACY.md](./PRIVACY.md)
+
 ## How to Use
 
 1. After installing, type `chat` in your address bar
 2. Press Tab or Space
 3. Type your search query
 4. Press Enter to search ChatGPT directly
-
-## Alternative Keywords
-
-You can also use `gpt` as a keyword by modifying the manifest.json file.
 
 ## Installation
 
@@ -22,6 +20,6 @@ You can also use `gpt` as a keyword by modifying the manifest.json file.
 
 ## Search URL
 
-This extension uses: `https://chat.openai.com/?q={searchTerms}`
+This extension uses: `https://chatgpt.com/?q={searchTerms}`
 
 Note: You may need to be logged into ChatGPT for the search to work properly.
