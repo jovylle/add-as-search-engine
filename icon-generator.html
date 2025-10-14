@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Generator - Add as Search Engine Extensions</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .icon-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .icon-preview {
+            width: 128px;
+            height: 128px;
+            margin: 0 auto 1rem;
+        }
+        .icon-sizes {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .size-option {
+            width: 64px;
+            height: 64px;
+        }
+        .download-btn {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0.25rem;
+        }
+        .download-btn:hover {
+            background: #3367d6;
+        }
+        .instructions {
+            background: #e8f4f8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #4285f4;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Chrome Extension Icon Generator</h1>
+        
+        <div class="instructions">
+            <h3>📖 Instructions:</h3>
+            <ol>
+                <li>Click the download buttons below each icon</li>
+                <li>Save the files with these exact names in each extension's <code>icons/</code> folder:</li>
+                <ul>
+                    <li><code>icon16.png</code> (16x16)</li>
+                    <li><code>icon32.png</code> (32x32)</li>
+                    <li><code>icon48.png</code> (48x48)</li>
+                    <li><code>icon128.png</code> (128x128)</li>
+                </ul>
+                <li>Then add the icon section back to each <code>manifest.json</code></li>
+            </ol>
+        </div>
+
+        <div class="icon-grid">
+            <!-- ChatGPT Icon -->
+            <div class="icon-card">
+                <h3>🤖 ChatGPT</h3>
+                <canvas id="chatgpt-128" class="icon-preview" width="128" height="128"></canvas>
+                <div class="icon-sizes">
+                    <canvas id="chatgpt-48" class="size-option" width="48" height="48"></canvas>
+                    <canvas id="chatgpt-32" class="size-option" width="32" height="32"></canvas>
+                    <canvas id="chatgpt-16" class="size-option" width="16" height="16"></canvas>
+                </div>
+                <div>
+                    <button class="download-btn" onclick="downloadIcon('chatgpt', 128)">📥 128px</button>
+                    <button class="download-btn" onclick="downloadIcon('chatgpt', 48)">📥 48px</button>
+                    <button class="download-btn" onclick="downloadIcon('chatgpt', 32)">📥 32px</button>
+                    <button class="download-btn" onclick="downloadIcon('chatgpt', 16)">📥 16px</button>
+                </div>
+            </div>
+
+            <!-- Claude Icon -->
+            <div class="icon-card">
+                <h3>🎭 Claude</h3>
+                <canvas id="claude-128" class="icon-preview" width="128" height="128"></canvas>
+                <div class="icon-sizes">
+                    <canvas id="claude-48" class="size-option" width="48" height="48"></canvas>
+                    <canvas id="claude-32" class="size-option" width="32" height="32"></canvas>
+                    <canvas id="claude-16" class="size-option" width="16" height="16"></canvas>
+                </div>
+                <div>
+                    <button class="download-btn" onclick="downloadIcon('claude', 128)">📥 128px</button>
+                    <button class="download-btn" onclick="downloadIcon('claude', 48)">📥 48px</button>
+                    <button class="download-btn" onclick="downloadIcon('claude', 32)">📥 32px</button>
+                    <button class="download-btn" onclick="downloadIcon('claude', 16)">📥 16px</button>
+                </div>
+            </div>
+
+            <!-- Perplexity Icon -->
+            <div class="icon-card">
+                <h3>🔍 Perplexity</h3>
+                <canvas id="perplexity-128" class="icon-preview" width="128" height="128"></canvas>
+                <div class="icon-sizes">
+                    <canvas id="perplexity-48" class="size-option" width="48" height="48"></canvas>
+                    <canvas id="perplexity-32" class="size-option" width="32" height="32"></canvas>
+                    <canvas id="perplexity-16" class="size-option" width="16" height="16"></canvas>
+                </div>
+                <div>
+                    <button class="download-btn" onclick="downloadIcon('perplexity', 128)">📥 128px</button>
+                    <button class="download-btn" onclick="downloadIcon('perplexity', 48)">📥 48px</button>
+                    <button class="download-btn" onclick="downloadIcon('perplexity', 32)">📥 32px</button>
+                    <button class="download-btn" onclick="downloadIcon('perplexity', 16)">📥 16px</button>
+                </div>
+            </div>
+
+            <!-- Copilot Icon -->
+            <div class="icon-card">
+                <h3>🚀 Copilot</h3>
+                <canvas id="copilot-128" class="icon-preview" width="128" height="128"></canvas>
+                <div class="icon-sizes">
+                    <canvas id="copilot-48" class="size-option" width="48" height="48"></canvas>
+                    <canvas id="copilot-32" class="size-option" width="32" height="32"></canvas>
+                    <canvas id="copilot-16" class="size-option" width="16" height="16"></canvas>
+                </div>
+                <div>
+                    <button class="download-btn" onclick="downloadIcon('copilot', 128)">📥 128px</button>
+                    <button class="download-btn" onclick="downloadIcon('copilot', 48)">📥 48px</button>
+                    <button class="download-btn" onclick="downloadIcon('copilot', 32)">📥 32px</button>
+                    <button class="download-btn" onclick="downloadIcon('copilot', 16)">📥 16px</button>
+                </div>
+            </div>
+
+            <!-- Gemini Icon -->
+            <div class="icon-card">
+                <h3>✨ Gemini</h3>
+                <canvas id="gemini-128" class="icon-preview" width="128" height="128"></canvas>
+                <div class="icon-sizes">
+                    <canvas id="gemini-48" class="size-option" width="48" height="48"></canvas>
+                    <canvas id="gemini-32" class="size-option" width="32" height="32"></canvas>
+                    <canvas id="gemini-16" class="size-option" width="16" height="16"></canvas>
+                </div>
+                <div>
+                    <button class="download-btn" onclick="downloadIcon('gemini', 128)">📥 128px</button>
+                    <button class="download-btn" onclick="downloadIcon('gemini', 48)">📥 48px</button>
+                    <button class="download-btn" onclick="downloadIcon('gemini', 32)">📥 32px</button>
+                    <button class="download-btn" onclick="downloadIcon('gemini', 16)">📥 16px</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Utilities for crisp, uniform rendering
+        function setupCanvas(canvas, size) {
+            const ratio = Math.ceil(window.devicePixelRatio || 1);
+            canvas.width = size * ratio;
+            canvas.height = size * ratio;
+            canvas.style.width = size + 'px';
+            canvas.style.height = size + 'px';
+            const ctx = canvas.getContext('2d');
+            ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+            ctx.clearRect(0, 0, size, size);
+            return ctx;
+        }
+
+        function sizeTier(size) {
+            if (size <= 16) return 'xs';
+            if (size <= 32) return 'sm';
+            if (size <= 48) return 'md';
+            return 'lg';
+        }
+
+        function bgCircle(ctx, size, stops) {
+            const pad = Math.round(size * 0.08);
+            const r = (size / 2) - pad;
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            stops.forEach(([off, color]) => gradient.addColorStop(off, color));
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(size / 2, size / 2, r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        function strokePx(size, factor, min = 1) {
+            // Round to integer pixels for crispness
+            return Math.max(min, Math.round(size * factor));
+        }
+
+        function roundedRectPath(ctx, x, y, w, h, r) {
+            const rr = Math.min(r, w / 2, h / 2);
+            ctx.beginPath();
+            ctx.moveTo(x + rr, y);
+            ctx.lineTo(x + w - rr, y);
+            ctx.quadraticCurveTo(x + w, y, x + w, y + rr);
+            ctx.lineTo(x + w, y + h - rr);
+            ctx.quadraticCurveTo(x + w, y + h, x + w - rr, y + h);
+            ctx.lineTo(x + rr, y + h);
+            ctx.quadraticCurveTo(x, y + h, x, y + h - rr);
+            ctx.lineTo(x, y + rr);
+            ctx.quadraticCurveTo(x, y, x + rr, y);
+            ctx.closePath();
+        }
+
+        // ChatGPT
+        function drawChatGPTIcon(ctx, size) {
+            bgCircle(ctx, size, [[0, '#4299e1'], [1, '#2b6cb0']]);
+            const pad = Math.round(size * 0.18);
+            const bubbleW = size - pad * 2;
+            const bubbleH = Math.round(size * 0.34);
+            const x = pad;
+            const y = Math.round(size * 0.30);
+            ctx.fillStyle = '#ffffff';
+            roundedRectPath(ctx, x, y, bubbleW, bubbleH, Math.round(size * 0.10));
+            ctx.fill();
+            // Tail
+            const tailW = Math.round(size * 0.18);
+            const tailH = Math.round(size * 0.12);
+            ctx.beginPath();
+            ctx.moveTo(x + Math.round(size * 0.18), y + bubbleH);
+            ctx.lineTo(x + Math.round(size * 0.28), y + bubbleH);
+            ctx.lineTo(x + Math.round(size * 0.20), y + bubbleH + tailH);
+            ctx.closePath();
+            ctx.fill();
+            // Dots (simplify for small sizes)
+            const tier = sizeTier(size);
+            const dotR = tier === 'xs' ? 2 : tier === 'sm' ? Math.max(2, Math.round(size * 0.07)) : Math.round(size * 0.07);
+            const dotY = y + Math.round(bubbleH / 2);
+            const dotColor = '#4299e1';
+            ctx.fillStyle = dotColor;
+            const dots = tier === 'xs' ? 2 : tier === 'sm' ? 2 : 3;
+            const startX = x + Math.round(bubbleW * (dots === 2 ? 0.35 : 0.30));
+            const gap = Math.round(size * 0.12);
+            for (let i = 0; i < dots; i++) {
+                ctx.beginPath();
+                ctx.arc(startX + i * gap, dotY, dotR, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Claude
+        function drawClaudeIcon(ctx, size) {
+            bgCircle(ctx, size, [[0, '#ed8936'], [1, '#c05621']]);
+            ctx.fillStyle = '#ffffff';
+            const faceW = Math.round(size * 0.48);
+            const faceH = Math.round(size * 0.60);
+            const cx = size / 2, cy = Math.round(size * 0.54);
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, faceW / 2, faceH / 2, 0, 0, Math.PI * 2);
+            ctx.fill();
+            // Eyes
+            const eyeR = Math.max(2, Math.round(size * 0.055));
+            ctx.fillStyle = '#ed8936';
+            ctx.beginPath(); ctx.arc(cx - faceW * 0.22, cy - faceH * 0.16, eyeR, 0, Math.PI * 2); ctx.fill();
+            ctx.beginPath(); ctx.arc(cx + faceW * 0.22, cy - faceH * 0.16, eyeR, 0, Math.PI * 2); ctx.fill();
+            // Smile (stroke with integer width)
+            ctx.strokeStyle = '#ed8936';
+            ctx.lineWidth = strokePx(size, 0.035, 2);
+            ctx.beginPath();
+            ctx.arc(cx, cy + faceH * 0.06, faceW * 0.28, 0.15 * Math.PI, 0.85 * Math.PI);
+            ctx.stroke();
+        }
+
+        // Perplexity
+        function drawPerplexityIcon(ctx, size) {
+            bgCircle(ctx, size, [[0, '#667eea'], [1, '#764ba2']]);
+            const cx = size / 2, cy = size / 2;
+            const offset = Math.round(size * 0.08);
+            const outerR = Math.round(size * 0.26);
+            const ring = Math.max(2, Math.round(size * 0.10));
+            // Lens ring as donut (avoids stroke blur)
+            ctx.fillStyle = '#ffffff';
+            ctx.beginPath();
+            ctx.arc(cx - offset, cy - offset, outerR, 0, Math.PI * 2);
+            ctx.arc(cx - offset, cy - offset, outerR - ring, 0, Math.PI * 2, true);
+            if (ctx.fill) {
+                // Safari/Chrome support evenodd via parameter
+                ctx.fill('evenodd');
+            } else {
+                // Fallback: composite punch-out
+                ctx.fill();
+                ctx.save();
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(cx - offset, cy - offset, outerR - ring, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+            // Handle (rounded rect)
+            ctx.save();
+            ctx.translate(cx + Math.round(size * 0.04), cy + Math.round(size * 0.04));
+            ctx.rotate(45 * Math.PI / 180);
+            const hw = Math.round(size * 0.22); // length
+            const hh = Math.round(size * 0.10); // thickness
+            ctx.fillStyle = '#ffffff';
+            roundedRectPath(ctx, 0, -hh / 2, hw, hh, Math.round(hh / 2));
+            ctx.fill();
+            ctx.restore();
+        }
+
+        // Copilot
+        function drawCopilotIcon(ctx, size) {
+            bgCircle(ctx, size, [[0, '#0078d4'], [1, '#106ebe']]);
+            ctx.fillStyle = '#ffffff';
+            const cx = size / 2, cy = size / 2;
+            // Body
+            ctx.beginPath();
+            ctx.ellipse(cx, cy, size * 0.12, size * 0.28, 0, 0, Math.PI * 2);
+            ctx.fill();
+            // Nose cone
+            ctx.beginPath();
+            ctx.moveTo(cx - size * 0.12, cy - size * 0.20);
+            ctx.quadraticCurveTo(cx, cy - size * 0.32, cx + size * 0.12, cy - size * 0.20);
+            ctx.lineTo(cx + size * 0.12, cy - size * 0.08);
+            ctx.lineTo(cx - size * 0.12, cy - size * 0.08);
+            ctx.closePath();
+            ctx.fill();
+            // Windows
+            ctx.fillStyle = '#0078d4';
+            const tier = sizeTier(size);
+            if (tier === 'xs') {
+                ctx.beginPath(); ctx.arc(cx, cy - size * 0.02, Math.max(2, Math.round(size * 0.05)), 0, Math.PI * 2); ctx.fill();
+            } else {
+                ctx.beginPath(); ctx.arc(cx, cy - size * 0.06, Math.max(2, Math.round(size * 0.045)), 0, Math.PI * 2); ctx.fill();
+                ctx.beginPath(); ctx.arc(cx, cy + size * 0.06, Math.max(2, Math.round(size * 0.032)), 0, Math.PI * 2); ctx.fill();
+            }
+            // Fins
+            ctx.fillStyle = '#ffffff';
+            const finY = cy + size * 0.10;
+            const finDY = tier === 'xs' ? size * 0.06 : size * 0.12;
+            const finDX = tier === 'xs' ? size * 0.06 : size * 0.10;
+            ctx.beginPath(); ctx.moveTo(cx - size * 0.12, finY); ctx.lineTo(cx - size * 0.12 - finDX, finY + finDY); ctx.lineTo(cx - size * 0.12 + size * 0.03, finY + finDY * 0.7); ctx.closePath(); ctx.fill();
+            ctx.beginPath(); ctx.moveTo(cx + size * 0.12, finY); ctx.lineTo(cx + size * 0.12 + finDX, finY + finDY); ctx.lineTo(cx + size * 0.12 - size * 0.03, finY + finDY * 0.7); ctx.closePath(); ctx.fill();
+        }
+
+        // Gemini
+        function drawGeminiIcon(ctx, size) {
+            bgCircle(ctx, size, [[0, '#4285f4'], [0.25, '#34a853'], [0.5, '#fbbc05'], [0.75, '#ea4335'], [1, '#4285f4']]);
+            ctx.fillStyle = '#ffffff';
+            const cx = size / 2, cy = size / 2;
+            const dW = size * 0.18, dH = size * 0.28, gap = size * 0.02;
+            // Left diamond
+            ctx.beginPath();
+            ctx.moveTo(cx - gap - dW / 2, cy);
+            ctx.lineTo(cx - gap, cy - dH / 2);
+            ctx.lineTo(cx - gap + dW / 2, cy);
+            ctx.lineTo(cx - gap, cy + dH / 2);
+            ctx.closePath();
+            ctx.fill();
+            // Right diamond
+            ctx.beginPath();
+            ctx.moveTo(cx + gap - dW / 2, cy);
+            ctx.lineTo(cx + gap, cy - dH / 2);
+            ctx.lineTo(cx + gap + dW / 2, cy);
+            ctx.lineTo(cx + gap, cy + dH / 2);
+            ctx.closePath();
+            ctx.fill();
+            // Inner dots
+            ctx.fillStyle = '#4285f4';
+            ctx.beginPath(); ctx.arc(cx - gap, cy, Math.max(2, Math.round(size * 0.03)), 0, Math.PI * 2); ctx.fill();
+            ctx.fillStyle = '#ea4335';
+            ctx.beginPath(); ctx.arc(cx + gap, cy, Math.max(2, Math.round(size * 0.03)), 0, Math.PI * 2); ctx.fill();
+        }
+
+        function drawIcon(service, size) {
+            const canvas = document.getElementById(`${service}-${size}`);
+            const ctx = setupCanvas(canvas, size);
+            switch(service) {
+                case 'chatgpt': drawChatGPTIcon(ctx, size); break;
+                case 'claude': drawClaudeIcon(ctx, size); break;
+                case 'perplexity': drawPerplexityIcon(ctx, size); break;
+                case 'copilot': drawCopilotIcon(ctx, size); break;
+                case 'gemini': drawGeminiIcon(ctx, size); break;
+            }
+        }
+
+        function downloadIcon(service, size) {
+            const canvas = document.getElementById(`${service}-${size}`);
+            const link = document.createElement('a');
+            link.download = `icon${size}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        window.onload = function() {
+            const services = ['chatgpt', 'claude', 'perplexity', 'copilot', 'gemini'];
+            const sizes = [128, 48, 32, 16];
+            services.forEach(service => sizes.forEach(size => drawIcon(service, size)));
+        };
+    </script>
+</body>
+</html>

@@ -18,6 +18,8 @@ This Chrome extension adds Claude AI as a search engine with the keyword "claude
 
 ## Search URL
 
-This extension uses: `https://claude.ai/chat?q={searchTerms}`
+This extension uses: `https://claude.ai/new?query={searchTerms}`
 
-Note: You may need to be logged into Claude AI for the search to work properly.
+**Note**: Claude may not always pre-fill the message box from the URL. If it opens a new chat without content, just paste your query.
+
+You may need to be logged into Claude AI for this to work properly.
