@@ -2,7 +2,7 @@
 
 This Chrome extension adds Perplexity AI as a search engine with the keyword "perplexity".
 
-See also: [SINGLE_PURPOSE.md](./SINGLE_PURPOSE.md) · [PRIVACY.md](./PRIVACY.md)
+See also: [EXTENSION_DETAILS.md](./EXTENSION_DETAILS.md)
 
 ## How to Use
 
