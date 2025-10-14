@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Claude as search engine - Chrome Extension</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        
+        .emoji {
+            font-size: 3rem;
+            display: block;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 40px;
+        }
+        
+        .install-steps {
+            background: #fef5e7;
+            border-left: 4px solid #ed8936;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .install-steps h3 {
+            color: #c05621;
+            margin-bottom: 1rem;
+        }
+        
+        .install-steps ol {
+            margin-left: 1.5rem;
+        }
+        
+        .install-steps li {
+            margin: 0.5rem 0;
+        }
+        
+        .usage-example {
+            background: #f0fff4;
+            border: 2px solid #68d391;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .usage-example code {
+            background: #2d3748;
+            color: #ff9a9e;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 1.1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ed8936, #dd6b20);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 1rem;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(237, 137, 54, 0.3);
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(237, 137, 54, 0.4);
+        }
+        
+        .btn-container {
+            text-align: center;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <span class="emoji">🎭</span>
+            <h1>Add Claude as search engine</h1>
+            <p class="subtitle">Quick access to Claude AI directly from your Chrome address bar</p>
+            
+            <div class="feature">
+                <span class="feature-icon">⚡</span>
+                <div>
+                    <strong>Instant Access:</strong> Type "claude" in your address bar to search Claude AI immediately
+                </div>
+            </div>
+            
+            <div class="feature">
+                <span class="feature-icon">🔒</span>
+                <div>
+                    <strong>Non-intrusive:</strong> Doesn't change your default search engine
+                </div>
+            </div>
+            
+            <div class="feature">
+                <span class="feature-icon">🎯</span>
+                <div>
+                    <strong>Simple & Clean:</strong> Minimal extension with one purpose
+                </div>
+            </div>
+            
+            <div class="usage-example">
+                <h3>How to Use:</h3>
+                <code>claude</code> + Tab + "your question" + Enter
+            </div>
+            
+            <div class="install-steps">
+                <h3>📦 Installation Steps:</h3>
+                <ol>
+                    <li>Download the extension folder from GitHub</li>
+                    <li>Open Chrome and go to <code>chrome://extensions/</code></li>
+                    <li>Enable "Developer mode" (top right toggle)</li>
+                    <li>Click "Load unpacked" and select the <code>claude-search-extension</code> folder</li>
+                    <li>Start using: Type "claude" in address bar → Tab → your query → Enter</li>
+                </ol>
+            </div>
+            
+            <div class="btn-container">
+                <a href="https://github.com/jovylle/add-as-search-engine/tree/main/claude-search-extension" class="download-btn">
+                    📥 Download Extension
+                </a>
+                <a href="policy.html" class="download-btn" style="background: linear-gradient(45deg, #718096, #4a5568);">
+                    📋 Privacy Policy
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <p>Created by <a href="https://jovylle.com">jovylle.com</a> | Part of the <a href="../">Add as Search Engine</a> collection</p>
+    </footer>
+</body>
+</html>

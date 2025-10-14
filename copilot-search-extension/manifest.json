@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Add Copilot as search engine",
+  "version": "1.0.0",
+  "description": "Adds Microsoft Copilot as a search engine with 'copilot' keyword",
+  "permissions": [
+    "search"
+  ],
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Microsoft Copilot",
+      "keyword": "copilot",
+      "search_url": "https://copilot.microsoft.com/?q={searchTerms}",
+      "favicon_url": "https://copilot.microsoft.com/favicon.ico",
+      "suggest_url": "",
+      "encoding": "UTF-8",
+      "is_default": false
+    }
+  }
+}

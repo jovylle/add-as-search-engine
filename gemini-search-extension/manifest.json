@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Add Gemini as search engine",
+  "version": "1.0.0",
+  "description": "Adds Google Gemini as a search engine with 'gemini' keyword",
+  "permissions": [
+    "search"
+  ],
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Google Gemini",
+      "keyword": "gemini",
+      "search_url": "https://gemini.google.com/app?hl=en&q={searchTerms}",
+      "favicon_url": "https://gemini.google.com/favicon.ico",
+      "suggest_url": "",
+      "encoding": "UTF-8",
+      "is_default": false
+    }
+  }
+}

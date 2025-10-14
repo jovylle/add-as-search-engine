@@ -1,0 +1,26 @@
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Claude-inspired icon with mask/theater theme -->
+  <defs>
+    <linearGradient id="claudeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ed8936;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c05621;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#claudeGradient)" />
+  
+  <!-- Theater mask shape -->
+  <path d="M35 45 C35 35, 45 25, 64 25 C83 25, 93 35, 93 45 L93 70 C93 85, 83 95, 64 95 C45 95, 35 85, 35 70 Z" fill="white" />
+  
+  <!-- Eyes -->
+  <ellipse cx="52" cy="55" rx="6" ry="8" fill="#ed8936" />
+  <ellipse cx="76" cy="55" rx="6" ry="8" fill="#ed8936" />
+  
+  <!-- Smile -->
+  <path d="M48 75 Q64 85, 80 75" stroke="#ed8936" stroke-width="4" fill="none" stroke-linecap="round" />
+  
+  <!-- Decorative elements -->
+  <circle cx="45" cy="35" r="6" fill="rgba(255,255,255,0.3)" />
+  <circle cx="83" cy="40" r="4" fill="rgba(255,255,255,0.3)" />
+</svg>

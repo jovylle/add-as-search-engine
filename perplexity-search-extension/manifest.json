@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Add Perplexity as search engine",
+  "version": "1.0.0",
+  "description": "Adds Perplexity AI as a search engine with 'perplexity' keyword",
+  "permissions": [
+    "search"
+  ],
+  "chrome_settings_overrides": {
+    "search_provider": {
+      "name": "Perplexity AI",
+      "keyword": "perplexity",
+      "search_url": "https://www.perplexity.ai/search?q={searchTerms}",
+      "favicon_url": "https://www.perplexity.ai/favicon.ico",
+      "suggest_url": "",
+      "encoding": "UTF-8",
+      "is_default": false
+    }
+  }
+}
