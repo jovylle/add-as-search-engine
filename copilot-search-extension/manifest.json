@@ -1,22 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Add Copilot as search engine",
+  "name": "Microsoft Copilot Search",
   "version": "1.0.0",
-  "description": "Adds Microsoft Copilot as a search engine with 'copilot' keyword",
-  "permissions": [
-    "search"
-  ],
-  "chrome_settings_overrides": {
-    "search_provider": {
-      "name": "Microsoft Copilot",
-      "keyword": "copilot",
-      "search_url": "https://copilot.microsoft.com/?q={searchTerms}",
-      "favicon_url": "https://copilot.microsoft.com/favicon.ico",
-      "suggest_url": "",
-      "encoding": "UTF-8",
-      "is_default": false
-    }
-  },
+  "description": "Add Copilot to the Chrome address bar. Type 'copilot' + Tab to search instantly. Does not change your default search engine.",
+  "omnibox": { "keyword": "copilot" },
+  "background": { "service_worker": "background.js" },
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Add Gemini as search engine",
+  "name": "Google Gemini Search",
   "version": "1.0.0",
-  "description": "Adds Google Gemini as a search engine with 'gemini' keyword",
+  "description": "Add Google Gemini to the Chrome address bar. Type 'gemini' + Tab to search instantly. Does not change your default search engine.",
   "permissions": [
     "search"
   ],
