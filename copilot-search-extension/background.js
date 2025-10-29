@@ -1,6 +1,6 @@
 chrome.omnibox.onInputEntered.addListener((text) => {
   const query = encodeURIComponent(text.trim());
-  const url = `https://copilot.microsoft.com/?q=${query}`;
+  const url = `@https://www.bing.com/copilotsearch?q=${query}`;
   chrome.tabs.create({ url });
 });
 
