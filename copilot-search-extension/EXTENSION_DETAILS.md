@@ -1,6 +1,6 @@
 # Extension details — Add Copilot as search engine
 
-Version: 1.0.0
+Version: 1.0.1
 
 ## Overview
 Adds Microsoft Copilot as a search engine in Chrome. Trigger it with the keyword below; your query opens at Copilot.

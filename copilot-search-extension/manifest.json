@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Microsoft Copilot Search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add Copilot to the Chrome address bar. Type 'copilot' + Tab to search instantly. Does not change your default search engine.",
   "omnibox": { "keyword": "copilot" },
   "background": { "service_worker": "background.js" },
