@@ -20,6 +20,6 @@ See also: [EXTENSION_DETAILS.md](./EXTENSION_DETAILS.md)
 
 ## Search URL
 
-This extension uses: `@https://www.bing.com/copilotsearch?q={searchTerms}`
+This extension uses: `https://www.bing.com/copilotsearch?q={searchTerms}`
 
 Note: You may need to be logged into your Microsoft account for the search to work properly.

@@ -15,7 +15,7 @@ Adds Microsoft Copilot as a search engine in Chrome. Trigger it with the keyword
 - copilot
 
 ## Search URL
-- @https://www.bing.com/copilotsearch?q={searchTerms}
+- https://www.bing.com/copilotsearch?q={searchTerms}
 
 ## Permissions and justification
 - None beyond defaults. Uses the Omnibox API via a lightweight background service worker to open a new tab to Copilot with your query.
