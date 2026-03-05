@@ -1,6 +1,7 @@
 # Add as Search Engine - Chrome Extensions Collection
 
 A collection of simple Chrome extensions that add popular AI services as search engines with custom keywords. Each extension allows you to quickly search a specific service directly from your address bar without making it your default search engine.
+<img width="840" height="314" alt="image" src="https://github.com/user-attachments/assets/7fa9dd81-b07f-46ca-9a76-c42ede966873" />
 
 ## Available Extensions
 
