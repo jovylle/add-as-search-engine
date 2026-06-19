@@ -7,8 +7,8 @@ A collection of simple Chrome extensions that add popular AI services as search 
 
 ### 🤖 ChatGPT Search Engine
 - **Folder**: `chatgpt-search-extension/`
-- **Keyword**: `chat`
-- **Usage**: Type `chat` in address bar → Tab → your query → Enter
+- **Keyword**: `c`
+- **Usage**: Type `c` in address bar → Tab → your query → Enter
 - **URL**: Searches ChatGPT directly
 
 ### 🎭 Claude AI Search Engine
@@ -47,7 +47,7 @@ A collection of simple Chrome extensions that add popular AI services as search 
 ## How to Use
 
 After installing an extension:
-1. Type the keyword (e.g., `chat` or `claude`) in your Chrome address bar
+1. Type the keyword (e.g., `c` or `claude`) in your Chrome address bar
 2. Press Tab or Space
 3. Type your search query
 4. Press Enter to search that service directly

@@ -147,19 +147,59 @@
             text-align: center;
             margin: 2rem 0;
         }
+
+        .screenshot-section {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .screenshot-section h3 {
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .screenshot-section img {
+            max-width: 100%;
+            width: 360px;
+            border-radius: 16px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+            border: 1px solid rgba(16, 163, 127, 0.2);
+        }
+
+        .screenshot-section p {
+            margin-top: 0.75rem;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .brand-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            display: block;
+            margin: 0 auto 1rem;
+            box-shadow: 0 8px 20px rgba(16, 163, 127, 0.25);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card">
-            <span class="emoji">🤖</span>
+            <img class="brand-icon" src="icons/icon128.png" alt="ChatGPT Search extension icon">
             <h1>Add ChatGPT as search engine</h1>
             <p class="subtitle">Quick access to ChatGPT directly from your Chrome address bar</p>
             
             <div class="feature">
                 <span class="feature-icon">⚡</span>
                 <div>
-                    <strong>Instant Access:</strong> Type "chat" in your address bar to search ChatGPT immediately
+                    <strong>Instant Access:</strong> Type <code>c</code> in your address bar to search ChatGPT immediately
+                </div>
+            </div>
+            
+            <div class="feature">
+                <span class="feature-icon">🚀</span>
+                <div>
+                    <strong>Auto-send:</strong> Prompts can auto-submit when opened with the <code>?prompt=</code> URL parameter
                 </div>
             </div>
             
@@ -179,7 +219,13 @@
             
             <div class="usage-example">
                 <h3>How to Use:</h3>
-                <code>chat</code> + Tab + "your question" + Enter
+                <code>c</code> + Tab + "your question" + Enter
+            </div>
+
+            <div class="screenshot-section">
+                <h3>Extension Settings</h3>
+                <img src="screenshots/popup-settings.png" alt="ChatGPT Search popup with keyword and auto-send settings">
+                <p>Customize your keyword and toggle auto-send from the extension popup.</p>
             </div>
             
             <div class="install-steps">
@@ -189,7 +235,7 @@
                     <li>Open Chrome and go to <code>chrome://extensions/</code></li>
                     <li>Enable "Developer mode" (top right toggle)</li>
                     <li>Click "Load unpacked" and select the <code>chatgpt-search-extension</code> folder</li>
-                    <li>Start using: Type "chat" in address bar → Tab → your query → Enter</li>
+                    <li>Start using: Type <code>c</code> in address bar → Tab → your query → Enter</li>
                 </ol>
             </div>
             

@@ -1,11 +1,9 @@
-# Icon Placeholders
+# ChatGPT Search Icons
 
-This folder should contain the extension icons in the following sizes:
-- icon16.png (16x16 pixels)
-- icon32.png (32x32 pixels)  
-- icon48.png (48x48 pixels)
-- icon128.png (128x128 pixels)
+Custom logo provided by the project owner.
 
-You can create simple icons or download ChatGPT-related icons to replace these placeholders.
+## Files
+- `logo-source.png` — original 1024×1024 logo
+- `icon16.png`, `icon32.png`, `icon48.png`, `icon128.png` — Chrome extension sizes
 
-For now, the extension will work without custom icons (Chrome will use default ones).
+Reload the extension in `chrome://extensions` after updating icons.

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Search</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup">
+    <header>
+      <h1>ChatGPT Search</h1>
+      <p class="subtitle">Extension settings</p>
+    </header>
+
+    <section class="setting-card keyword-card">
+      <p class="setting-desc">Address-bar keyword</p>
+      <p class="keyword-value"><code>c</code> + Tab + your question + Enter</p>
+    </section>
+
+    <section class="setting-card">
+      <p class="setting-desc">Auto-send prompts when opened with the <code>?prompt=</code> URL parameter.</p>
+      <label class="toggle-row" for="auto-send">
+        <span>Auto-send when using prompt param</span>
+        <input id="auto-send" type="checkbox">
+      </label>
+      <p id="auto-send-status" class="setting-status"></p>
+    </section>
+
+    <p id="error" class="message error" hidden></p>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

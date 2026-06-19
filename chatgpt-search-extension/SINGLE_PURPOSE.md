@@ -2,7 +2,7 @@
 
 This extension has exactly one purpose:
 
-- Add ChatGPT as a search engine in Chrome with the keyword: `chat`.
+- Add ChatGPT as a search engine in Chrome with the keyword: `c`.
 
 What it does not do:
 - It does not change your default search engine.

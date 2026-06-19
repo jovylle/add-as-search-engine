@@ -1,6 +1,6 @@
 chrome.omnibox.onInputEntered.addListener((text) => {
   const query = encodeURIComponent(text.trim());
-  const url = `https://chatgpt.com/?q=${query}`;
+  const url = `https://chatgpt.com/?prompt=${query}`;
   chrome.tabs.create({ url });
 });
 
