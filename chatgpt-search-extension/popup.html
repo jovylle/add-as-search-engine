@@ -10,23 +10,60 @@
   <main class="popup">
     <header>
       <h1>ChatGPT Search</h1>
-      <p class="subtitle">Extension settings</p>
+      <p class="subtitle">Auto-send prompts + address-bar setup</p>
     </header>
 
-    <section class="setting-card keyword-card">
-      <p class="setting-desc">Address-bar keyword</p>
-      <p class="keyword-value"><code>c</code> + Tab + your question + Enter</p>
+    <section class="setting-card search-card">
+      <label for="quick-search">Quick search</label>
+      <div class="row">
+        <input id="quick-search" type="text" placeholder="Ask ChatGPT…" autocomplete="off" spellcheck="false">
+        <button id="quick-search-btn" type="button">Go</button>
+      </div>
     </section>
 
     <section class="setting-card">
-      <p class="setting-desc">Auto-send prompts when opened with the <code>?prompt=</code> URL parameter.</p>
       <label class="toggle-row" for="auto-send">
-        <span>Auto-send when using prompt param</span>
+        <span>Auto-send when URL has <code>?prompt=</code></span>
         <input id="auto-send" type="checkbox">
       </label>
       <p id="auto-send-status" class="setting-status"></p>
     </section>
 
+    <section class="setting-card setup-card">
+      <p class="card-title">Add ChatGPT to your address bar</p>
+      <p class="setting-desc">Chromium extension — add site search once in your browser settings (extensions cannot do this automatically).</p>
+
+      <div class="copy-field">
+        <span class="copy-label">Name</span>
+        <code id="setup-name">ChatGPT</code>
+        <button type="button" class="copy-btn" data-copy="setup-name">Copy</button>
+      </div>
+      <div class="copy-field">
+        <span class="copy-label">Shortcut</span>
+        <code id="setup-shortcut">c</code>
+        <button type="button" class="copy-btn" data-copy="setup-shortcut">Copy</button>
+      </div>
+      <div class="copy-field">
+        <span class="copy-label">URL</span>
+        <code id="setup-url">https://chatgpt.com/?prompt=%s</code>
+        <button type="button" class="copy-btn" data-copy="setup-url">Copy</button>
+      </div>
+
+      <label class="browser-label" for="browser-select">Chromium browser</label>
+      <select id="browser-select">
+        <option value="chrome">Google Chrome</option>
+        <option value="edge">Microsoft Edge</option>
+        <option value="brave">Brave</option>
+        <option value="opera">Opera</option>
+        <option value="vivaldi">Vivaldi</option>
+      </select>
+
+      <ol id="setup-steps" class="setup-steps"></ol>
+
+      <button id="open-search-settings" type="button" class="secondary">Open search settings</button>
+    </section>
+
+    <p id="toast" class="message success" hidden></p>
     <p id="error" class="message error" hidden></p>
   </main>
   <script src="popup.js"></script>

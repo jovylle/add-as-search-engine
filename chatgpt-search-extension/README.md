@@ -1,25 +1,51 @@
-# ChatGPT Search Engine Extension
+# ChatGPT Search
 
-This Chrome extension adds ChatGPT as a search engine with the keyword "c".
+Auto-send ChatGPT prompts when you open `https://chatgpt.com/?prompt=...`. Includes quick search and one-time setup to add ChatGPT to your address bar.
 
-See also: [EXTENSION_DETAILS.md](./EXTENSION_DETAILS.md)
+Works in **Chromium browsers** (Chrome, Edge, Brave, Opera, Vivaldi).
 
-## How to Use
+## What it does
 
-1. After installing, type `c` in your address bar
-2. Press Tab or Space
-3. Type your search query
-4. Press Enter to search ChatGPT directly
+1. **Auto-send** — opens ChatGPT with `?prompt=` and clicks Send (toggle in popup)
+2. **Quick search** — type in the popup, opens ChatGPT with your prompt
+3. **Setup guide** — copy-paste values to add a `c` address-bar shortcut manually
+
+## One-time setup (address bar)
+
+Browsers do **not** let extensions add search engines automatically (malware prevention). Add it once yourself:
+
+| Field | Value |
+|-------|-------|
+| Name | `ChatGPT` |
+| Shortcut | `c` |
+| URL | `https://chatgpt.com/?prompt=%s` |
+
+### Chrome / Edge / Brave / Opera
+
+1. Open search settings (`chrome://`, `edge://`, or `opera://settings/searchEngines`)
+2. **Site search** → **Add**
+3. Paste the values above
+4. Use: `c` + Tab + your question + Enter
+
+### Vivaldi
+
+1. **Settings → Search** → add search engine
+2. Same values as above — this uses Vivaldi's native search (reliable)
+3. Use: `c` + space/tab + your question
+
+The extension popup has **Copy** buttons and steps for each Chromium browser.
 
 ## Installation
 
-1. Open Chrome and go to `chrome://extensions/`
-2. Enable "Developer mode" in the top right
-3. Click "Load unpacked" and select this folder
-4. The extension will be installed and ChatGPT will be available as a search engine
+1. Open `chrome://extensions/`
+2. Enable **Developer mode**
+3. **Load unpacked** → select this folder
 
-## Search URL
+## Permissions
 
-This extension uses: `https://chatgpt.com/?q={searchTerms}`
+- `storage` — auto-send on/off preference
+- `chatgpt.com` — content script to auto-send when `?prompt=` is present
 
-Note: You may need to be logged into ChatGPT for the search to work properly.
+## Disclaimer
+
+Independent community utility — not affiliated with OpenAI or ChatGPT.

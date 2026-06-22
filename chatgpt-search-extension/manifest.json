@@ -1,15 +1,13 @@
 {
   "manifest_version": 3,
   "name": "ChatGPT Search",
-  "version": "1.4.3",
-  "description": "Search ChatGPT from your address bar. Type c + Tab, your question. Optional auto-send. Won't change default search.",
+  "version": "2.0.1",
+  "description": "Auto-send ChatGPT prompts from ?prompt= URLs. Quick search + one-time setup for address-bar shortcut c.",
   "permissions": ["storage"],
   "host_permissions": ["https://chatgpt.com/*"],
-  "omnibox": { "keyword": "c" },
-  "background": { "service_worker": "background.js" },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "ChatGPT Search settings"
+    "default_title": "ChatGPT Search"
   },
   "content_scripts": [
     {

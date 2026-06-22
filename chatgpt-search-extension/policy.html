@@ -117,7 +117,7 @@
             <p class="effective-date">Effective Date: October 14, 2025</p>
             
             <div class="highlight">
-                <strong>TL;DR:</strong> This extension is completely privacy-focused. It doesn't collect, store, or transmit any personal data. It simply adds ChatGPT as a search option in Chrome.
+                <strong>TL;DR:</strong> This extension is completely privacy-focused. It doesn't collect, store, or transmit any personal data. It auto-sends ChatGPT prompts from <code>?prompt=</code> URLs and helps you set up an address-bar shortcut.
             </div>
             
             <h2>1. Information We Collect</h2>
@@ -126,18 +126,18 @@
             <h2>2. How the Extension Works</h2>
             <p>This extension only:</p>
             <ul>
-                <li>Adds ChatGPT as a search engine option in Chrome</li>
-                <li>Enables the "chat" keyword for quick access</li>
-                <li>Redirects your search queries directly to ChatGPT's website</li>
+                <li>Auto-sends prompts on chatgpt.com when the URL contains <code>?prompt=</code></li>
+                <li>Provides quick search from the extension popup</li>
+                <li>Includes copy-paste setup for a manual <code>c</code> address-bar shortcut</li>
             </ul>
             
-            <p>The extension operates entirely locally within your browser and does not communicate with any external servers except ChatGPT when you choose to search.</p>
+            <p>The extension operates locally in your browser. No queries pass through our servers — only ChatGPT receives your search when you choose to search.</p>
             
             <h2>3. Data Sharing</h2>
             <p>Since we don't collect any data, there is nothing to share. When you search using this extension, your query goes directly to ChatGPT's servers, subject to OpenAI's privacy policy.</p>
             
             <h2>4. Permissions</h2>
-            <p>This extension only requests the "search" permission, which is necessary to add ChatGPT as a search engine option. No other permissions are requested or used.</p>
+            <p>This extension requests <code>storage</code> to save your auto-send preference locally, and <code>host_permissions</code> on chatgpt.com for optional auto-send. No other permissions are used.</p>
             
             <h2>5. Third-Party Services</h2>
             <p>When you use this extension to search, you'll be interacting with:</p>

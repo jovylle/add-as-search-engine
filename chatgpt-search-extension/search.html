@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT Search</title>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const prompt = (params.get('prompt') || params.get('q') || '').trim();
+      const target = prompt
+        ? `https://chatgpt.com/?prompt=${encodeURIComponent(prompt)}`
+        : 'https://chatgpt.com/';
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to ChatGPT…</p>
+</body>
+</html>

@@ -1,44 +1,36 @@
 # Chrome Web Store listing — ChatGPT Search
 
-Version: 1.4.2
+Version: 2.0.0
 
-## Why Chrome rejected v1.4.1
+## Positioning (v2.0)
 
-`chrome_settings_overrides.search_provider` requires URLs you **own**.  
-You cannot register `https://chatgpt.com/...` because OpenAI owns that domain.
+**Core value:** Auto-send ChatGPT prompts when opened via `?prompt=` URL.
 
-**Fix in v1.4.2:** switched back to **omnibox + background.js** (like Claude/Perplexity extensions). No `search` permission, no search provider override.
+**Secondary:** One-time manual setup for `c` address-bar shortcut (copy-paste in popup). Works on all Chromium browsers including Vivaldi.
 
----
+**Removed:** Omnibox API, `chrome_settings_overrides`, background service worker.
 
-## Store form — copy/paste
+## Single purpose
 
-### Homepage URL
-Use a **public, reachable** page you control. Pick one:
+Auto-send ChatGPT prompts from URL parameters and help users add a ChatGPT address-bar shortcut.
 
-- `https://jovylle.com`
-- `https://github.com/jovylle/add-as-search-engine` (after you push latest code)
-
-Do **not** use a local file or a GitHub path that 404s.
-
-### Privacy policy URL
-Must be a **public HTML page**. Options:
-
-1. Host `policy.html` on GitHub Pages, e.g.  
-   `https://jovylle.github.io/add-as-search-engine/chatgpt-search-extension/policy.html`
-2. Or add a privacy section on `https://jovylle.com` and link that
-
-Until hosted, Chrome will show **Privacy policy link is not reachable**.
-
-### Single purpose
-Add ChatGPT quick search from the Chrome address bar using keyword `c`.
-
-### Permission justifications (Privacy practices tab)
+## Permission justifications
 
 **storage**  
-Saves the user's auto-send on/off preference locally in Chrome sync storage. No personal data is collected.
+Saves the user's auto-send on/off preference locally. No personal data is collected.
 
 **host_permissions: https://chatgpt.com/***  
-Required only when auto-send is enabled. The content script runs on chatgpt.com to submit the prompt from the `?prompt=` URL parameter. No data is sent anywhere else.
+Content script runs on chatgpt.com to click Send when the page is opened with a `?prompt=` URL parameter and auto-send is enabled.
 
-**No `search` permission in v1.4.2** — you should NOT need a search justification anymore.
+## Homepage / privacy
+
+- Homepage: `https://jovylle.com` or GitHub repo
+- Privacy: host `policy.html` on GitHub Pages
+
+## FAQ for reviewers
+
+**Q: Why doesn't the extension add the search engine itself?**  
+A: Browsers prohibit extensions from programmatically adding third-party search engines (malware vector). Users add it once via built-in browser settings using values we provide.
+
+**Q: Does it change the default search engine?**  
+A: No.

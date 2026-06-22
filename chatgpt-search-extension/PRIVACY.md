@@ -1,33 +1,38 @@
-# Privacy Policy — Add ChatGPT as search engine
+# Privacy Policy — ChatGPT Search
 
 Effective date: October 14, 2025
 
-TL;DR: This extension is privacy-first. It does not collect, store, or transmit any personal data. It only adds ChatGPT as a search engine in Chrome.
+TL;DR: No data collection. Auto-send runs locally. Searches go directly to ChatGPT.
 
 ## 1. Information We Collect
-None. The extension does not collect, store, or transmit any personal information, browsing data, or search queries.
+
+None.
 
 ## 2. How the Extension Works
-- Adds ChatGPT as a search engine option in Chrome
-- Enables the `chat` keyword for quick access
-- Redirects your query to ChatGPT when you use the keyword
 
-The extension runs locally in your browser and communicates only with ChatGPT when you choose to search.
+- Runs a content script on chatgpt.com when auto-send is enabled and the URL contains `?prompt=`
+- Stores your auto-send on/off preference locally
+- Popup can open ChatGPT with a prompt — sent directly to OpenAI's servers
+
+No queries pass through our servers.
 
 ## 3. Data Sharing
-We do not collect data; therefore, we do not share data. When you search using this extension, your query goes directly to ChatGPT, subject to OpenAI’s policies.
+
+We do not collect data. Queries go to ChatGPT subject to OpenAI's privacy policy.
 
 ## 4. Permissions
-This extension requests only the `search` permission, which is required to register a search engine. No other permissions are used.
+
+- `storage` — auto-send preference
+- `chatgpt.com` — auto-send content script only
 
 ## 5. Third‑Party Services
+
 - ChatGPT (OpenAI): https://openai.com/policies/privacy-policy
 
-## 6. Changes to This Policy
-If this policy changes, we’ll update the effective date. Given the extension’s minimal scope, changes are unlikely.
+## 6. Contact
 
-## 7. Contact
-Questions? Visit https://jovylle.com
+https://jovylle.com
 
-## 8. Open Source
-Code: https://github.com/jovylle/add-as-search-engine
+## 7. Open Source
+
+https://github.com/jovylle/add-as-search-engine

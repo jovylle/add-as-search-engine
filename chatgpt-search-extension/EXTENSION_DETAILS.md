@@ -1,62 +1,68 @@
-# Extension details — Add ChatGPT as search engine
+# Extension details — ChatGPT Search
 
-Version: 1.4.1
+Version: 2.0.0
 
 ## Overview
-Adds ChatGPT as a search engine in Chrome. Trigger it with your keyword (default: `c`); your query opens at ChatGPT with optional auto-send.
+
+Repurposed around what works everywhere:
+
+- **Auto-send** prompts when ChatGPT opens with `?prompt=` in the URL
+- **Quick search** from the extension popup
+- **Setup guide** to add a manual address-bar shortcut (`c`) — one-time, copy-paste
+
+No omnibox API. No owned redirect server. No `chrome_settings_overrides`.
 
 ## Store listing
+
 - Title: ChatGPT Search
-- Short description: Search ChatGPT from your address bar. Custom keyword + auto-send prompts. Does not change your default search engine.
+- Short description: Auto-send ChatGPT prompts from ?prompt= URLs. Quick search + setup guide for address-bar shortcut c.
 - Category: Search Tools
-- Primary language: English (en)
 
-## Keyword
-- c (default, customizable via extension popup)
+## Why manual search engine setup?
 
-## Search URL
-- https://chatgpt.com/?prompt={searchTerms}
+Chromium browsers **block** extensions from adding arbitrary search engines programmatically. Only options:
 
-## Permissions and justification
-- `storage` — saves your keyword preference and auto-send toggle locally
-- `search` — registers ChatGPT as a Chrome search engine option
-- `host_permissions` + `content_scripts` on chatgpt.com — auto-send prompt when enabled
+| Approach | Works cross-browser? | Store-safe? | Trust |
+|----------|---------------------|-------------|-------|
+| `chrome_settings_overrides` | Chrome-family only | Needs owned domain | Redirect server |
+| Omnibox API | Chrome/Edge only | Yes | Direct to ChatGPT |
+| Manual site search | **Chromium browsers** | N/A (user action) | Direct to ChatGPT |
+
+We chose **manual setup + auto-send** — works on Vivaldi, uses `c`, no middleman.
+
+## Search engine values (user adds once)
+
+- Name: `ChatGPT`
+- Shortcut: `c`
+- URL: `https://chatgpt.com/?prompt=%s`
+
+## Permissions
+
+- `storage` — auto-send toggle
+- `host_permissions` + `content_scripts` on chatgpt.com — auto-send
 
 ## Data handling
-- Stores only your keyword and auto-send preference locally in Chrome sync storage
-- No analytics or telemetry
-- Search queries go directly to ChatGPT when you choose to search
 
-## Third‑party service
-- ChatGPT (OpenAI) — Privacy: https://openai.com/policies/privacy-policy
-
-## Notes
-- You may need to be signed in to ChatGPT for the search to work properly.
-- If you change the keyword from the default, apply it once in Chrome search settings.
-
-## Disclaimer
-This project is an independent, community-made utility and is not affiliated with, endorsed by, or sponsored by OpenAI or ChatGPT.
+- Stores only auto-send preference locally
+- No analytics
+- Queries go directly to ChatGPT
 
 ## Long description (Chrome Web Store)
-Search ChatGPT straight from the address bar—fast, simple, and distraction-free. This extension adds ChatGPT as a search engine option but does not replace your default search engine.
 
-How it works
-- Type `c` in the address bar and press Tab (or Space)
-- Enter your question
-- Press Enter to open ChatGPT with your query via `?prompt=`
+Open ChatGPT with a prompt in the URL and have it sent automatically. Add a one-time `c` address-bar shortcut using our copy-paste setup guide.
 
-Settings (click the extension icon)
-- Customize your address-bar keyword
-- Toggle auto-send when using the `?prompt=` URL parameter
+**Features**
+- Auto-send when URL contains `?prompt=`
+- Quick search from the extension popup
+- Step-by-step setup for Chrome, Edge, Brave, Opera, and Vivaldi
 
-What you get
-- Quick access to ChatGPT from anywhere in Chrome
-- Customizable keyword shortcut
-- Optional auto-send for faster searches
-- Lightweight, single-purpose design
+**How address-bar search works**
+1. Add ChatGPT as a site search engine (one time, ~30 seconds)
+2. Type `c` + Tab + your question + Enter
+3. Extension auto-sends the prompt on chatgpt.com
 
-What to expect (and what's not included)
-- This does not set or change your default search engine
-- No omnibox autocomplete or suggestions from this extension
-- No data collection or telemetry; only your keyword/auto-send prefs are stored locally
-- Queries are sent to ChatGPT only when you press Enter
+Does not change your default search engine. Does not route queries through our servers.
+
+## Disclaimer
+
+Not affiliated with OpenAI or ChatGPT.
