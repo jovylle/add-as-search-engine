@@ -1,10 +1,10 @@
 # Extension details — ChatGPT Search
 
-Version: 2.0.0
+Version: 2.0.1
 
 ## Overview
 
-Repurposed around what works everywhere:
+Repurposed around what works in Chromium browsers:
 
 - **Auto-send** prompts when ChatGPT opens with `?prompt=` in the URL
 - **Quick search** from the extension popup
@@ -47,21 +47,34 @@ We chose **manual setup + auto-send** — works on Vivaldi, uses `c`, no middlem
 - No analytics
 - Queries go directly to ChatGPT
 
-## Long description (Chrome Web Store)
+## Long description (Chrome Web Store — copy/paste)
 
-Open ChatGPT with a prompt in the URL and have it sent automatically. Add a one-time `c` address-bar shortcut using our copy-paste setup guide.
+Search ChatGPT from your address bar—fast, simple, and distraction-free. This extension auto-sends prompts and helps you add a one-time `c` shortcut. It does not replace your default search engine.
 
-**Features**
-- Auto-send when URL contains `?prompt=`
-- Quick search from the extension popup
-- Step-by-step setup for Chrome, Edge, Brave, Opera, and Vivaldi
+How it works
+- One-time setup: add ChatGPT as a site search engine using copy-paste values in the popup (Name: ChatGPT, Shortcut: c, URL: https://chatgpt.com/?prompt=%s)
+- Type `c` in the address bar and press Tab
+- Enter your question
+- Press Enter to open ChatGPT with your query via `?prompt=`
+- The extension auto-sends the prompt on chatgpt.com (toggle in popup)
 
-**How address-bar search works**
-1. Add ChatGPT as a site search engine (one time, ~30 seconds)
-2. Type `c` + Tab + your question + Enter
-3. Extension auto-sends the prompt on chatgpt.com
+Settings (click the extension icon)
+- Quick search — type and Go from the popup
+- Copy-paste setup for Chrome, Edge, Brave, Opera, and Vivaldi
+- Toggle auto-send when using the `?prompt=` URL parameter
 
-Does not change your default search engine. Does not route queries through our servers.
+What you get
+- Quick access to ChatGPT from anywhere in Chromium browsers
+- Address-bar shortcut `c` after one-time manual setup
+- Optional auto-send for faster searches
+- Lightweight, single-purpose design
+- No redirect server — queries go straight to ChatGPT
+
+What to expect (and what's not included)
+- This does not set or change your default search engine
+- Extensions cannot add search engines automatically (browser security) — you add it once yourself
+- No data collection or telemetry; only your auto-send preference is stored locally
+- Queries are sent to ChatGPT only when you search or use quick search
 
 ## Disclaimer
 

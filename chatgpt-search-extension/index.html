@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add ChatGPT as search engine - Chrome Extension</title>
+    <title>ChatGPT Search — Chromium Extension</title>
     <style>
         * {
             margin: 0;
@@ -39,13 +39,6 @@
             margin-bottom: 1rem;
             font-size: 2.5rem;
             text-align: center;
-        }
-        
-        .emoji {
-            font-size: 3rem;
-            display: block;
-            text-align: center;
-            margin-bottom: 1rem;
         }
         
         .subtitle {
@@ -89,6 +82,30 @@
         
         .install-steps li {
             margin: 0.5rem 0;
+        }
+
+        .setup-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        .setup-table th,
+        .setup-table td {
+            border: 1px solid #cbd5e0;
+            padding: 0.625rem 0.75rem;
+            text-align: left;
+        }
+
+        .setup-table th {
+            background: #edf2f7;
+        }
+
+        .setup-table code {
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
         }
         
         .usage-example {
@@ -180,71 +197,91 @@
             margin: 0 auto 1rem;
             box-shadow: 0 8px 20px rgba(16, 163, 127, 0.25);
         }
+
+        .note {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="card">
             <img class="brand-icon" src="icons/icon128.png" alt="ChatGPT Search extension icon">
-            <h1>Add ChatGPT as search engine</h1>
-            <p class="subtitle">Quick access to ChatGPT directly from your Chrome address bar</p>
+            <h1>ChatGPT Search</h1>
+            <p class="subtitle">Auto-send prompts + address-bar shortcut for Chromium browsers</p>
             
             <div class="feature">
                 <span class="feature-icon">⚡</span>
                 <div>
-                    <strong>Instant Access:</strong> Type <code>c</code> in your address bar to search ChatGPT immediately
+                    <strong>Auto-send:</strong> Opens ChatGPT with <code>?prompt=</code> and submits your question automatically
+                </div>
+            </div>
+            
+            <div class="feature">
+                <span class="feature-icon">🔍</span>
+                <div>
+                    <strong>Address bar:</strong> One-time setup adds shortcut <code>c</code> — type, Tab, ask, Enter
                 </div>
             </div>
             
             <div class="feature">
                 <span class="feature-icon">🚀</span>
                 <div>
-                    <strong>Auto-send:</strong> Prompts can auto-submit when opened with the <code>?prompt=</code> URL parameter
+                    <strong>Quick search:</strong> Click the extension icon, type your question, Go
                 </div>
             </div>
             
             <div class="feature">
                 <span class="feature-icon">🔒</span>
                 <div>
-                    <strong>Non-intrusive:</strong> Doesn't change your default search engine
+                    <strong>Direct to ChatGPT:</strong> No redirect server. Does not change your default search engine.
                 </div>
             </div>
-            
-            <div class="feature">
-                <span class="feature-icon">🎯</span>
-                <div>
-                    <strong>Simple & Clean:</strong> Minimal extension with one purpose
-                </div>
+
+            <div class="note">
+                Chromium extension for Chrome, Edge, Brave, Opera, and Vivaldi. Browsers block extensions from adding search engines automatically — you paste these values once in settings:
             </div>
+
+            <table class="setup-table">
+                <tr><th>Field</th><th>Value</th></tr>
+                <tr><td>Name</td><td><code>ChatGPT</code></td></tr>
+                <tr><td>Shortcut</td><td><code>c</code></td></tr>
+                <tr><td>URL</td><td><code>https://chatgpt.com/?prompt=%s</code></td></tr>
+            </table>
             
             <div class="usage-example">
-                <h3>How to Use:</h3>
+                <h3>After setup:</h3>
                 <code>c</code> + Tab + "your question" + Enter
             </div>
 
             <div class="screenshot-section">
-                <h3>Extension Settings</h3>
-                <img src="screenshots/popup-settings.png" alt="ChatGPT Search popup with keyword and auto-send settings">
-                <p>Customize your keyword and toggle auto-send from the extension popup.</p>
+                <h3>Extension popup</h3>
+                <img src="screenshots/popup-settings.png" alt="ChatGPT Search popup with quick search, setup guide, and auto-send toggle">
+                <p>Quick search, copy-paste setup values, and auto-send toggle.</p>
             </div>
             
             <div class="install-steps">
-                <h3>📦 Installation Steps:</h3>
+                <h3>Installation</h3>
                 <ol>
-                    <li>Download the extension folder from GitHub</li>
-                    <li>Open Chrome and go to <code>chrome://extensions/</code></li>
-                    <li>Enable "Developer mode" (top right toggle)</li>
-                    <li>Click "Load unpacked" and select the <code>chatgpt-search-extension</code> folder</li>
-                    <li>Start using: Type <code>c</code> in address bar → Tab → your query → Enter</li>
+                    <li>Download from GitHub or load the extension folder</li>
+                    <li>Open <code>chrome://extensions/</code> (or your browser's equivalent)</li>
+                    <li>Enable Developer mode → Load unpacked → select <code>chatgpt-search-extension</code></li>
+                    <li>Open the extension popup → copy setup values → add site search once</li>
+                    <li>Use <code>c</code> + Tab + your question, or quick search from the popup</li>
                 </ol>
             </div>
             
             <div class="btn-container">
                 <a href="https://github.com/jovylle/add-as-search-engine/tree/main/chatgpt-search-extension" class="download-btn">
-                    📥 Download Extension
+                    Download on GitHub
                 </a>
                 <a href="policy.html" class="download-btn" style="background: linear-gradient(45deg, #718096, #4a5568);">
-                    📋 Privacy Policy
+                    Privacy Policy
                 </a>
             </div>
         </div>

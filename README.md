@@ -5,11 +5,11 @@ A collection of simple Chrome extensions that add popular AI services as search 
 
 ## Available Extensions
 
-### 🤖 ChatGPT Search Engine
+### 🤖 ChatGPT Search
 - **Folder**: `chatgpt-search-extension/`
-- **Keyword**: `c`
-- **Usage**: Type `c` in address bar → Tab → your query → Enter
-- **URL**: Searches ChatGPT directly
+- **Version**: 2.0.1 — auto-send + manual `c` shortcut setup
+- **Usage**: One-time site search setup, then `c` + Tab + query, or quick search from popup
+- **URL**: `https://chatgpt.com/?prompt=%s`
 
 ### 🎭 Claude AI Search Engine
 - **Folder**: `claude-search-extension/`
